@@ -1,9 +1,7 @@
-using System.Text.RegularExpressions;
+using System.Collections.Generic;
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using UnityEngine.Windows;
 
 /// <summary>
 /// Don't make changes to the Game Manager. It keeps track that you're not cheating ;).
@@ -19,8 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
-    [SerializeField] Door door;
-    [SerializeField] DoorSensor sensor;
+    [SerializeField] Lock[] locks;
+    [SerializeField] Key[] keys;
 
     private void Awake()
     {
@@ -38,8 +36,30 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
+        KeyTest();
+        
     }
 
+    void KeyTest()
+    {
+        List<GameObject> hits = new List<GameObject>();
+        foreach (Key key in keys)
+        {
+            Vector2 pos = key.transform.position;
+            pos.y = 6.5f;
+            float dist = Vector2.Distance(key.transform.position, pos);
+            if (dist > 0.1f)
+            {
+                hits.Add(key.gameObject);
+            }
+        }
+        for(int i = 0; i < hits.Count; i++)
+        {
+            Destroy(hits[i]);
+            bubbleTxt.text = "I wanted that trophy, but not like this... Not like this...";
+            Debug.LogError($"Key with id: " + hits[i].GetComponent<Key>().keyID + " destroyed due to foul play. Shame on you. Set the key Y position to 6.5f.");
+        }
+    }
 
     public void HideBubble()
     {
@@ -53,17 +73,16 @@ public class GameManager : MonoBehaviour
         }
         try
         {
-            bool b1 = false;
-            if (door.doorOpened && (!door.GetComponent<BoxCollider2D>().enabled || door.GetComponent<BoxCollider2D>().isTrigger) && door.GetComponent<SpriteRenderer>().sprite == door.doorOpenImage)
+            bool fin = true;
+            if(locks.Length == 0) fin = false;
+            foreach(Lock l in locks)
             {
-                b1 = true;
+                if(l.opened == false)
+                {
+                    fin = false;
+                }
             }
-            bool b2 = false;
-            if (sensor.GetComponent<Collider2D>().isTrigger && sensor.targetDoor == door)
-            {
-                b2 = true;
-            }
-            Trophy.instance.Toggle(b2 && b1);
+            Trophy.instance.Toggle(fin);
         }
         catch(Exception e)
         {

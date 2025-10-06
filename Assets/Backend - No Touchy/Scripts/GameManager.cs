@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
@@ -18,8 +19,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
-    [SerializeField] LayerMask mask;
-    [SerializeField] GameObject tilemap;
+    [SerializeField] Door door;
+    [SerializeField] DoorSensor sensor;
 
     private void Awake()
     {
@@ -46,20 +47,30 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(0, 1), Vector2.down, 10f, mask);
-        Debug.Log(hit.transform.gameObject.name);
-        if(hit.transform.gameObject == tilemap)
-        {
-            Trophy.instance.Toggle(true);
-        }
-        else
-        {
-            Trophy.instance.Toggle(false);
-        }
         if (Vector2.Distance(player.transform.position, startP) > 0.2f)
         {
             bubble.SetActive(false);
         }
+        try
+        {
+            bool b1 = false;
+            if (door.doorOpened && (!door.GetComponent<BoxCollider2D>().enabled || door.GetComponent<BoxCollider2D>().isTrigger) && door.GetComponent<SpriteRenderer>().sprite == door.doorOpenImage)
+            {
+                b1 = true;
+            }
+            bool b2 = false;
+            if (sensor.GetComponent<Collider2D>().isTrigger && sensor.targetDoor == door)
+            {
+                b2 = true;
+            }
+            Trophy.instance.Toggle(b2 && b1);
+        }
+        catch(Exception e)
+        {
+            Trophy.instance.Toggle(false);
+        }
+       
+        
     }
 
     public bool MissionComplete()

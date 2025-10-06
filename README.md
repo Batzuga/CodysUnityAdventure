@@ -10,3 +10,7 @@ You can move Cody with WASD and Arrow keys.
 Reach the trophy without cheating and you get a Task Complete.
 When you have finished the task, change the branch to next Mission.
 
+
+
+If like the project and you wish to support this effort, buy me a coffee!
+https://buymeacoffee.com/batzuga

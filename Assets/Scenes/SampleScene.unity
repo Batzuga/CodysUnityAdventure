@@ -4406,6 +4406,11 @@ MonoBehaviour:
   - {fileID: 1654989466}
   - {fileID: 64857041}
   - {fileID: 1798223992}
+  keys:
+  - {fileID: 718124208}
+  - {fileID: 660133949}
+  - {fileID: 1135965650}
+  - {fileID: 1056963515}
 --- !u!4 &1238185500
 Transform:
   m_ObjectHideFlags: 0
@@ -8355,7 +8360,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2.5311663, y: 1.5999999}
+  m_Size: {x: 3.1311662, y: 1.6499999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -8370,7 +8375,7 @@ Transform:
   m_GameObject: {fileID: 2116310359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5403, y: 0.9219, z: 0}
+  m_LocalPosition: {x: 0.6903001, y: 0.93439996, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

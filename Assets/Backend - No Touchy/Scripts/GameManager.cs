@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
+    int c;
+    public List<GameObject> diamonds;
+    List<GameObject> collected;
 
     private void Awake()
     {
@@ -36,6 +39,26 @@ public class GameManager : MonoBehaviour
         startP = player.transform.position;
         
     }
+
+    public void CollectDiamond(Diamond d)
+    {
+        c++;
+        if(collected == null) collected = new List<GameObject>();
+        collected.Add(d.gameObject);
+    }
+    bool CompareLists()
+    {
+        if (collected.Count == diamonds.Count)
+        {
+            bool b = true;
+            for(int i = 0; i < collected.Count; i++)
+            {
+                if (collected[i] != diamonds[i]) b = false;
+            }
+            return b;
+        }
+        else return false;
+    }
     public void HideBubble()
     {
         bubble.SetActive(false);
@@ -46,6 +69,14 @@ public class GameManager : MonoBehaviour
         {
             bubble.SetActive(false);
         }     
+        if(c == 0 || !CompareLists())
+        {
+            Trophy.instance.Toggle(false);
+        }
+        else
+        {
+            Trophy.instance.Toggle(true);
+        }
     }
 
     public bool MissionComplete()

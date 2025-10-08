@@ -17,9 +17,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
-    int c;
-    public List<GameObject> diamonds;
-    List<GameObject> collected;
+    [SerializeField] GameObject oliverBubble;
+
+    bool fixd;
+    float dur;
 
     private void Awake()
     {
@@ -39,26 +40,6 @@ public class GameManager : MonoBehaviour
         startP = player.transform.position;
         
     }
-
-    public void CollectDiamond(Diamond d)
-    {
-        c++;
-        if(collected == null) collected = new List<GameObject>();
-        collected.Add(d.gameObject);
-    }
-    bool CompareLists()
-    {
-        if (collected.Count == diamonds.Count)
-        {
-            bool b = true;
-            for(int i = 0; i < collected.Count; i++)
-            {
-                if (collected[i] != diamonds[i]) b = false;
-            }
-            return b;
-        }
-        else return false;
-    }
     public void HideBubble()
     {
         bubble.SetActive(false);
@@ -69,14 +50,20 @@ public class GameManager : MonoBehaviour
         {
             bubble.SetActive(false);
         }     
-        if(c == 0 || !CompareLists())
+        if(player.GetComponent<Rigidbody2D>().linearVelocityX > 0 && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
         {
-            Trophy.instance.Toggle(false);
+            dur += Time.deltaTime;
+            if (dur > 0.3f)
+            {
+                fixd = true;
+            }
         }
         else
         {
-            Trophy.instance.Toggle(true);
+            dur = 0;
         }
+        oliverBubble.SetActive(!fixd);
+        Trophy.instance.Toggle(fixd);
     }
 
     public bool MissionComplete()

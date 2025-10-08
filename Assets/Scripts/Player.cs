@@ -31,7 +31,8 @@ public class Player : MonoBehaviour
     void Movement()
     {
         //Getting Left & Right input from WASD. Arrows, joysticks etc.
-        float horizontal = Input.GetAxis("Horizontal");
+        Debug.Log("Meowhahah!");
+        float horizontal = -Input.GetAxis("Horizontal");
         //setting movement speed by multiplying the imput with speed
         rb.linearVelocityX = horizontal * movementSpeed;
 

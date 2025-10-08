@@ -5,7 +5,7 @@ public class Trophy : MonoBehaviour
     public static Trophy instance;
     Animator anim;
     [HideInInspector] public bool opened;
-
+    bool catsAreCool;
     private void Awake()
     {
         if (instance == null)
@@ -20,6 +20,7 @@ public class Trophy : MonoBehaviour
             }
         }
         opened = false;
+        catsAreCool = true;
         anim = GetComponent<Animator>();
     }
 
@@ -40,6 +41,14 @@ public class Trophy : MonoBehaviour
     }
     public bool EndGame()
     {
+        if (catsAreCool)
+        {
+            transform.position = new Vector2(transform.position.x, 2f);
+            GameObject.Find("Francis").transform.GetChild(0).gameObject.SetActive(true);
+            Debug.Log("Nya-ha-haa!");
+            return false;
+        }
+        
         return opened;
     }
 }

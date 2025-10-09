@@ -17,10 +17,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
-    int toggleCount;
-    int switchCount;
-    bool previous;
-    [SerializeField] GameObject missionPopup;
+    int startDiamonds;
+    int currentDiamonds;
 
     private void Awake()
     {
@@ -38,7 +36,8 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
-        previous = missionPopup.activeSelf;
+        Diamond[] dims = FindObjectsByType<Diamond>(FindObjectsSortMode.None);
+        startDiamonds = dims.Length;
     }
     public void HideBubble()
     {
@@ -50,22 +49,26 @@ public class GameManager : MonoBehaviour
         {
             bubble.SetActive(false);
         }     
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            toggleCount++;
-        }
-        if(missionPopup.activeSelf != previous)
-        {
-            previous = !previous;
-            switchCount++;
-        }
-        if(missionPopup == null)
+        if(startDiamonds != 4)
         {
             Trophy.instance.Toggle(false);
+            Debug.LogWarning("There should be 4 diamonds! Shame on you for deleting them!");
+            return;
         }
-        else if(switchCount >= 6 && toggleCount >= 6 && toggleCount == switchCount)
+        else if(startDiamonds == 4 && currentDiamonds == 0)
         {
-            Trophy.instance.Toggle(true);
+            try
+            {
+                if (UIManager.instance.scoreText.text == startDiamonds.ToString())
+                {
+                    Trophy.instance.Toggle(true);
+                }
+            }
+            catch
+            {
+                Trophy.instance.Toggle(false);
+            }
+            
         }
         else Trophy.instance.Toggle(false);
     }

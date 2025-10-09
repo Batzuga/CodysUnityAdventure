@@ -17,9 +17,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
-    int startDiamonds;
-    int currentDiamonds;
-
+    bool jumpBeenPressed;
+    bool playerboxed;
+    [SerializeField] BoxCollider2D lap;
     private void Awake()
     {
         if(instance == null)
@@ -36,8 +36,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
-        Diamond[] dims = FindObjectsByType<Diamond>(FindObjectsSortMode.None);
-        startDiamonds = dims.Length;
     }
     public void HideBubble()
     {
@@ -49,28 +47,22 @@ public class GameManager : MonoBehaviour
         {
             bubble.SetActive(false);
         }     
-        if(startDiamonds != 4)
+        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
         {
-            Trophy.instance.Toggle(false);
-            Debug.LogWarning("There should be 4 diamonds! Shame on you for deleting them!");
-            return;
+            jumpBeenPressed = true;
         }
-        else if(startDiamonds == 4 && currentDiamonds == 0)
+        List<Collider2D> results = new List<Collider2D>();
+        if(!playerboxed && lap.Overlap(results) > 0)
         {
-            try
+            foreach(Collider2D col in results)
             {
-                if (UIManager.instance.scoreText.text == startDiamonds.ToString())
+                if(col.gameObject.CompareTag("Player"))
                 {
-                    Trophy.instance.Toggle(true);
+                    playerboxed = true;
                 }
             }
-            catch
-            {
-                Trophy.instance.Toggle(false);
-            }
-            
         }
-        else Trophy.instance.Toggle(false);
+        Trophy.instance.Toggle(playerboxed && jumpBeenPressed);
     }
 
     public bool MissionComplete()

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] public float movementSpeed;
-
+    [SerializeField] public float jumpPower;
     Rigidbody2D rb;
     Animator anim;
     SpriteRenderer rend;
@@ -26,12 +26,29 @@ public class Player : MonoBehaviour
     {
         grounded = CheckIfGrounded();
         Movement();
+        Jupm();
+    }
+
+
+    void Jump()
+    {
+        if(Input.GetKeyDown(KeyCode.Jump))
+        {
+            if (grounded == false)
+            {
+                rb.AddForce(Vector2.left * jumpPower, ForceMode2D.Impulse);
+            }
+        }     
     }
 
     void Movement()
     {
         //Getting Left & Right input from WASD. Arrows, joysticks etc.
         float horizontal = Input.GetAxis("Horizontal");
+
+        //hide the mission if we have moved
+        if(horizontal != 0) UIManager.instance.SetMissionPopup(false);
+ 
         //setting movement speed by multiplying the imput with speed
         rb.linearVelocityX = horizontal * movementSpeed;
 
@@ -72,8 +89,12 @@ public class Player : MonoBehaviour
         }
         if(collision.gameObject.GetComponent<Diamond>())
         {
-            Debug.Log("Diamond hit. Trying to collect");
             collision.gameObject.GetComponent<Diamond>().Collect();
+        }
+        if(collision.gameObject.CompareTag("DeadZone"))
+        {
+            rb.linearVelocity = Vector2.zero;
+            transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
         }
     }
 

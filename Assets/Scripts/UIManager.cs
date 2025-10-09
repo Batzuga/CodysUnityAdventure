@@ -5,8 +5,9 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
     [SerializeField] GameObject missionPopup;
-    public TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI scoreText;
     int score;
+
     private void Awake()
     {
         if (instance == null)
@@ -30,10 +31,12 @@ public class UIManager : MonoBehaviour
             ToggleMissionPopup();   
         }
     }
+
     public void SetMissionPopup(bool isOn)
     {
         missionPopup.SetActive(isOn);
     }
+
     public void ToggleMissionPopup()
     {
         missionPopup.SetActive(!missionPopup.activeSelf);
@@ -41,6 +44,7 @@ public class UIManager : MonoBehaviour
 
     public void AddScore()
     {
-
+        score++;
+        scoreText.text = score.ToString();
     }
 }

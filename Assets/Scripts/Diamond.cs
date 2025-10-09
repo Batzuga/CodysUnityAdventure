@@ -4,7 +4,7 @@ public class Diamond : MonoBehaviour
 {
     public void Collect()
     {
-        Debug.Log("Diamond collected!");
+        UIManager.instance.AddScore();
         Destroy(gameObject);
     }
 }

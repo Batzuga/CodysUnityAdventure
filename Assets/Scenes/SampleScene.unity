@@ -3732,64 +3732,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: What be the component that handles the physics?
+  - question: Which of the following counts as float
     answers:
-    - Sprite Renderer
-    - Box Collider
-    - Rigidbody
+    - f10
+    - 2.8
+    - 1.4f
     correct: 2
-  - question: What light changes the light amount of the whole scene in 2D games?
+  - question: What is an integer (int)
     answers:
-    - Freeform
-    - Global
-    - Spot
+    - Text
+    - A number
+    - A component
     correct: 1
-  - question: Can a 2D collider hit a 3D collider?
+  - question: Which of the following is an integer?
+    answers:
+    - '"Cool"'
+    - '"1"'
+    - 1
+    - 5.4f
+    correct: 2
+  - question: Does int have a maximum number?
+    answers:
+    - Yes, 1000000
+    - Yes, 1258125961
+    - Yes, 2147483647
+    - No
+    correct: 2
+  - question: Can I add an int to a float?
     answers:
     - Yes
     - No
-    correct: 1
-  - question: What do you call the component that we use for UI?
-    answers:
-    - Canvas
-    - Image
-    - TextMeshPro
+    - Only if it ends with .0
     correct: 0
-  - question: What is the version control we use for games?
-    answers:
-    - Dropbox
-    - Google Drive
-    - Git
-    correct: 2
-  - question: What component do we use for UI text?
-    answers:
-    - Image
-    - TextMeshProUGUI
-    - TextMesh
-    - TextMeshPro
-    correct: 1
-  - question: Which of the following is not a 2D collider?
-    answers:
-    - Tilemap Collider
-    - Circle Collider
-    - Sphere Collider
-    - Polygon Collider
-    correct: 2
-  - question: Can you use Button component without a Canvas?
-    answers:
-    - Yes
-    - No
-    correct: 1
-  - question: Is it possible to change the pivot point of a Sprite?
+  - question: Can I turn a number into a text?
     answers:
     - Yes
     - No
     correct: 0
-  - question: Can you pack multiple Sprites into one single texture?
+  - question: If I were to turn a number into a text, which of these would I use?
     answers:
-    - Yes
-    - No
+    - string s = number.ToString();
+    - string s = (string)number;
+    - string s = string.number;
+    - number n = string;
     correct: 0
+  - question: How can I send a message to the console to see if my code is working?
+    answers:
+    - PrintLine("Working!");
+    - System.Print("Working!");
+    - Debug("Working!");
+    - Debug.Log("Working!");
+    correct: 3
+  - question: Which of these is not a string
+    answers:
+    - Cool
+    - '"Sweet"'
+    - '"1"'
+    - '"Terrific"'
+    correct: 0
+  - question: How much is X?\nint X = 1 + 1.4f;
+    answers:
+    - 3
+    - 2.4
+    - Not possible to count.
+    - 2
+    correct: 2
   startButton: {fileID: 705537053}
   answerButton:
   - {fileID: 841539919}

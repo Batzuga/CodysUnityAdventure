@@ -17,10 +17,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
-    [SerializeField] GameObject oliverBubble;
-
-    bool fixd;
-    float dur;
+    int toggleCount;
+    int switchCount;
+    bool previous;
+    [SerializeField] GameObject missionPopup;
 
     private void Awake()
     {
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
-        
+        previous = missionPopup.activeSelf;
     }
     public void HideBubble()
     {
@@ -50,20 +50,24 @@ public class GameManager : MonoBehaviour
         {
             bubble.SetActive(false);
         }     
-        if(player.GetComponent<Rigidbody2D>().linearVelocityX > 0 && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
+        if(Input.GetKeyDown(KeyCode.Tab))
         {
-            dur += Time.deltaTime;
-            if (dur > 0.3f)
-            {
-                fixd = true;
-            }
+            toggleCount++;
         }
-        else
+        if(missionPopup.activeSelf != previous)
         {
-            dur = 0;
+            previous = !previous;
+            switchCount++;
         }
-        oliverBubble.SetActive(!fixd);
-        Trophy.instance.Toggle(fixd);
+        if(missionPopup == null)
+        {
+            Trophy.instance.Toggle(false);
+        }
+        else if(switchCount >= 6 && toggleCount >= 6 && toggleCount == switchCount)
+        {
+            Trophy.instance.Toggle(true);
+        }
+        else Trophy.instance.Toggle(false);
     }
 
     public bool MissionComplete()

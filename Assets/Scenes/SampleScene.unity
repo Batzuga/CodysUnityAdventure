@@ -3438,16 +3438,6 @@ MonoBehaviour:
   tmp: {fileID: 1384091688}
   bubble: {fileID: 2116310359}
   bubbleTxt: {fileID: 970494336}
-  locks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  keys:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!4 &1238185500
 Transform:
   m_ObjectHideFlags: 0
@@ -3476,65 +3466,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: Which one is called first, Start or Awake?
+  - question: What be the component that handles the physics?
     answers:
-    - Start
-    - Awake
-    correct: 1
-  - question: What is correct syntax for saving a component to a variable?
-    answers:
-    - Player p = GetComponent(Player);
-    - Player p = GetComponent<Player>();
-    - p = gameObject.Player;
-    - gameObject.Player();
-    correct: 1
-  - question: How would you call a function called "void TakeDamage" in code?
-    answers:
-    - TakeDamage();
-    - if(TakeDamage())
-    - do.TakeDamage();
-    correct: 0
-  - question: How about "void TakeDamage(float amount)"?
-    answers:
-    - TakeDamage(float, 10);
-    - TakeDamage(float = 10);
-    - TakeDamage(amount = 10);
-    - TakeDamage(10f);
-    correct: 3
-  - question: Can you call a function that is not marked public from another class?
-    answers:
-    - Yes
-    - No
-    correct: 1
-  - question: Can you add a function to a button's OnClick if the function is private.
-    answers:
-    - Yes
-    - No
-    correct: 1
-  - question: How can you turn a variable visible for the editor if it's marked private.
-    answers:
-    - '[Serializable]'
-    - float.serialized
-    - serialized.float
-    - '[SerializeField]'
-    correct: 3
-  - question: Can you have two functions with a sama name?
-    answers:
-    - No
-    - Yes, if they have the same parameters.
-    - "\xDDes, if they have different parameters"
+    - Sprite Renderer
+    - Box Collider
+    - Rigidbody
     correct: 2
-  - question: Can I have two classes with a same name?
+  - question: What light changes the light amount of the whole scene in 2D games?
+    answers:
+    - Freeform
+    - Global
+    - Spot
+    correct: 1
+  - question: Can a 2D collider hit a 3D collider?
     answers:
     - Yes
     - No
     correct: 1
-  - question: Is it possible to have two classes with a same name if one of them
-      is marked public and one is not?
+  - question: What do you call the component that we use for UI?
+    answers:
+    - Canvas
+    - Image
+    - TextMeshPro
+    correct: 0
+  - question: What is the version control we use for games?
+    answers:
+    - Dropbox
+    - Google Drive
+    - Git
+    correct: 2
+  - question: What component do we use for UI text?
+    answers:
+    - Image
+    - TextMeshProUGUI
+    - TextMesh
+    - TextMeshPro
+    correct: 1
+  - question: Which of the following is not a 2D collider?
+    answers:
+    - Tilemap Collider
+    - Circle Collider
+    - Sphere Collider
+    - Polygon Collider
+    correct: 2
+  - question: Can you use Button component without a Canvas?
     answers:
     - Yes
     - No
     correct: 1
+  - question: Is it possible to change the pivot point of a Sprite?
+    answers:
+    - Yes
+    - No
+    correct: 0
+  - question: Can you pack multiple Sprites into one single texture?
+    answers:
+    - Yes
+    - No
+    correct: 0
   startButton: {fileID: 705537053}
   answerButton:
   - {fileID: 841539919}

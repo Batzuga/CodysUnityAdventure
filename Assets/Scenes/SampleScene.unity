@@ -496,6 +496,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &136237484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5885788543398654972, guid: eddac26561291504db8761590c406e57, type: 3}
+  m_PrefabInstance: {fileID: 887238151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &205804604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,7 +1825,7 @@ Transform:
   m_GameObject: {fileID: 669998485}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.64, y: -0.85, z: 0}
+  m_LocalPosition: {x: 0, y: -0.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2069,7 +2080,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &705537054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2087,7 +2098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: -172.51}
+  m_AnchoredPosition: {x: -0.000015259, y: -45}
   m_SizeDelta: {x: 782.6648, y: 246.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &705537055
@@ -2745,6 +2756,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846053635}
   m_CullTransparentMesh: 1
+--- !u!1001 &887238151
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 185641413312143325, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 185641413312143325, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2829196
+      objectReference: {fileID: 0}
+    - target: {fileID: 185641413312143325, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_Size.y
+      value: 3.7977915
+      objectReference: {fileID: 0}
+    - target: {fileID: 185641413312143325, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519130402145133281, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_Name
+      value: QuizMaster
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885788543398654972, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_text
+      value: Riddle me these, cody.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885788543398654972, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_margin.x
+      value: 9.03227
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885788543398654972, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_margin.z
+      value: 9.052108
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.746702
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.99610555
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455411149119904524, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.67990017
+      objectReference: {fileID: 0}
+    - target: {fileID: 6455411149119904524, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.42855
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799390894175344571, guid: eddac26561291504db8761590c406e57, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2935742474036600601, guid: eddac26561291504db8761590c406e57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: eddac26561291504db8761590c406e57, type: 3}
 --- !u!1 &918956677
 GameObject:
   m_ObjectHideFlags: 0
@@ -3036,7 +3147,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: That floating text is always in the way. I wish I could get rid of it...
+  m_text: "how do you know \nmy name?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
   m_sharedMaterial: {fileID: 1520220755029484581, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
@@ -3968,7 +4079,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238185497}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6edb939a166e04799653dd6d16c9e3, type: 3}
   m_Name: 
@@ -4039,7 +4150,7 @@ MonoBehaviour:
   - {fileID: 673425251}
   - {fileID: 1085368606}
   - {fileID: 470581344}
-  bubbleTxt: {fileID: 0}
+  bubbleTxt: {fileID: 136237484}
 --- !u!1 &1306070225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4313,7 +4424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 550, y: -237.005}
+  m_AnchoredPosition: {x: 550, y: -183.005}
   m_SizeDelta: {x: 1000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384091688
@@ -4336,23 +4447,18 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size=50><color=yellow>Mission 11 - In the way!</color></size>
+  m_text: '<size=50><color=yellow>Mission 12 - Quiz master''s revenge</color></size>
 
 
-    Cody
-    has a point. As the missions get more challenging, the guide (this text) might
-    get much longer and it might interfere with  the level view. So, using the UI
-    manager script, make it so that you can turn off the MissionPopup window by pressing
-    tab. We made it more popup-like in advance.
+    quiz
+    master is back with a vengeance. This time he is confident you won''t know all
+    the answers!
 
 
     Mission
 
-    <color=yellow>Make
-    a code that toggles this ui on and off.
-
-    Then toggle the ui on and off 3
-    times.</color>'
+    <color=yellow>answer 5 / 10 of quiz master''s
+    questions correctly.</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
   m_sharedMaterial: {fileID: 1520220755029484581, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
@@ -4583,6 +4689,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502815126}
   m_CullTransparentMesh: 1
+--- !u!1 &1527137753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527137755}
+  - component: {fileID: 1527137754}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1527137754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527137753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66dc23aab5a88ef45b72cd863bccd84e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionPopup: {fileID: 803626503}
+--- !u!4 &1527137755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527137753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.047429, y: -0.11739969, z: 0.06222911}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1574877175
 GameObject:
   m_ObjectHideFlags: 0
@@ -7028,7 +7179,7 @@ SpriteRenderer:
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 2.931166, y: 1.7000002}
+  m_Size: {x: 2.3811657, y: 1.1500003}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7043,7 +7194,7 @@ Transform:
   m_GameObject: {fileID: 2116310359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0.9469, z: 0}
+  m_LocalPosition: {x: -0.46249998, y: 0.8094, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7162,3 +7313,5 @@ SceneRoots:
   - {fileID: 1238185500}
   - {fileID: 1347464412}
   - {fileID: 1672378172}
+  - {fileID: 887238151}
+  - {fileID: 1527137755}

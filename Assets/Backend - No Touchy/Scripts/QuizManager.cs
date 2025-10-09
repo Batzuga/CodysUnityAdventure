@@ -34,6 +34,7 @@ public class QuizManager : MonoBehaviour
     }
     public void StartQuiz()
     {
+        UIManager.instance.SetMissionPopup(false);
         GameManager.instance.HideBubble();
         FormatQuestion();
         StartCoroutine(EnableAnswerButtons());

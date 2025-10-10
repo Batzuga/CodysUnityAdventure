@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Don't make changes to the Game Manager. It keeps track that you're not cheating ;).
@@ -17,13 +18,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject bubble;
     [SerializeField] TextMeshPro bubbleTxt;
     Vector2 startP;
-    bool jumpBeenPressed;
-    bool playerboxed;
-    [SerializeField] BoxCollider2D lap;
-
-    float jumpframeonground;
-    float wrongairframe;
-
+    int reset;
+    int scenenum;
     private void Awake()
     {
         if(instance == null)
@@ -34,23 +30,47 @@ public class GameManager : MonoBehaviour
         {
             if(instance != this)
             {
-                Destroy(this);
+                Destroy(gameObject);
             }
         }
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
+        scenenum = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.sceneLoaded += LoadScene;
     }
+
+    private void LoadScene(Scene scene, LoadSceneMode mode)
+    {
+        player = GameObject.FindFirstObjectByType<Player>();
+        startP = player.transform.position;
+        Debug.Log(scene.buildIndex);
+        if(scene.buildIndex == scenenum) reset++;
+        winScreen = GameObject.Find("MissionUI").transform.Find("WinScreen").gameObject;
+        try
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        catch
+        {
+
+        }
+    }
+
     public void HideBubble()
     {
         bubble.SetActive(false);
     }
     void Update()
     {
+        if(player == null) player = GameObject.FindFirstObjectByType<Player>();
+
         if (Vector2.Distance(player.transform.position, startP) > 0.2f)
         {
+            if (bubble == null) bubble = player.transform.Find("SpeechBubble (Cody)").gameObject;
             bubble.SetActive(false);
-        }           
+        }
+        Trophy.instance.Toggle(reset > 2);
     }
 
     public bool MissionComplete()

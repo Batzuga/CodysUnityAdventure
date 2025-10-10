@@ -428,7 +428,7 @@ Transform:
   m_GameObject: {fileID: 84127139}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8104815, y: -0.9912329, z: 0}
+  m_LocalPosition: {x: -5.4604816, y: -0.9912329, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -543,7 +543,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &205804606
 MonoBehaviour:
@@ -595,9 +595,9 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 35
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1613,7 +1613,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558761164
 MonoBehaviour:
@@ -1665,9 +1665,9 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 35
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1903,7 +1903,7 @@ Transform:
   m_GameObject: {fileID: 669998485}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.12, y: 1.41, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2158,7 +2158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &705537054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2330,7 +2330,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754372337
 MonoBehaviour:
@@ -2382,9 +2382,9 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 35
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2495,6 +2495,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1384091687}
+  - {fileID: 2147064317}
   m_Father: {fileID: 1997341437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -2857,7 +2858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &846053636
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2865,16 +2866,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846053635}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1997341437}
+  m_Father: {fileID: 2147064317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -339.7852, y: 418.74176}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 819.55005, y: 207.21008}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &846053637
@@ -2967,11 +2968,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4519130402145133281, guid: eddac26561291504db8761590c406e57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5885788543398654972, guid: eddac26561291504db8761590c406e57, type: 3}
       propertyPath: m_text
-      value: Riddle me these, cody.
+      value: Well, hello there!
       objectReference: {fileID: 0}
     - target: {fileID: 5885788543398654972, guid: eddac26561291504db8761590c406e57, type: 3}
       propertyPath: m_margin.x
@@ -2983,7 +2984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.746702
+      value: 5.596702
       objectReference: {fileID: 0}
     - target: {fileID: 5894736065403949688, guid: eddac26561291504db8761590c406e57, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3036,7 +3037,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2935742474036600601, guid: eddac26561291504db8761590c406e57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: eddac26561291504db8761590c406e57, type: 3}
 --- !u!1 &918956677
 GameObject:
@@ -3329,7 +3333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I told you i couldn't jump. I just look stupid doing it.
+  m_text: why can't you just leave me alone!?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
   m_sharedMaterial: {fileID: 1520220755029484581, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
@@ -4036,7 +4040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1229636454
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4044,16 +4048,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229636453}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1997341437}
+  m_Father: {fileID: 2147064317}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 340.3036, y: 418.74176}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 176.40002, y: 207.21008}
   m_SizeDelta: {x: 64, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1229636455
@@ -4279,65 +4283,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - question: Which one is called first, Start or Awake?
+  - question: in vector2, is x or y the up direction?
     answers:
-    - Start
-    - Awake
+    - X
+    - Y
     correct: 1
-  - question: What is correct syntax for saving a component to a variable?
+  - question: If I want to add force upwards in jump, how would I do it?
     answers:
-    - Player p = GetComponent(Player);
-    - Player p = GetComponent<Player>();
-    - p = gameObject.Player;
-    - gameObject.Player();
-    correct: 1
-  - question: How would you call a function called "void TakeDamage" in code?
-    answers:
-    - TakeDamage();
-    - if(TakeDamage())
-    - do.TakeDamage();
+    - rigidbody.AddForce(Vector2.up);
+    - AddForce(rigidbody.up);
+    - rigidbody.up(AddForce);
+    - rigidbody.AddForce(up);
     correct: 0
-  - question: How about "void TakeDamage(float amount)"?
+  - question: Which of these is the same thing as Vector2.up?
     answers:
-    - TakeDamage(float, 10);
-    - TakeDamage(float = 10);
-    - TakeDamage(amount = 10);
-    - TakeDamage(10f);
-    correct: 3
-  - question: Can you call a function that is not marked public from another class?
+    - new Vector2(0, 1);
+    - new Vector2(1, 1);
+    - new Vector2(1, 0);
+    - new Vector2(0,0);
+    correct: 0
+  - question: Which of these is meant to be used in UI canvas?
     answers:
-    - Yes
-    - No
-    correct: 1
-  - question: Can you add a function to a button's OnClick if the function is private.
-    answers:
-    - Yes
-    - No
-    correct: 1
-  - question: How can you turn a variable visible for the editor if it's marked private.
-    answers:
-    - '[Serializable]'
-    - float.serialized
-    - serialized.float
-    - '[SerializeField]'
-    correct: 3
-  - question: Can you have two functions with a sama name?
-    answers:
-    - No
-    - Yes, if they have the same parameters.
-    - "\xDDes, if they have different parameters"
+    - SpriteRenderer
+    - Quad
+    - Image
+    - Plane
     correct: 2
-  - question: Can I have two classes with a same name?
+  - question: Is x += 1 same thing as x++?
+    answers:
+    - Yes
+    - No
+    correct: 0
+  - question: Can a single game object have multiple colliders on it?
+    answers:
+    - Yes
+    - No
+    correct: 0
+  - question: Can a trigger block player from moving through it?
     answers:
     - Yes
     - No
     correct: 1
-  - question: Is it possible to have two classes with a same name if one of them
-      is marked public and one is not?
+  - question: Is it possible to disable and enable a component from a game object?
+    answers:
+    - Yes
+    - No
+    correct: 0
+  - question: If a game ojbject with a script is disabled does the script still work?
     answers:
     - Yes
     - No
     correct: 1
+  - question: What is the code language that unity scripts use?
+    answers:
+    - C++
+    - Python
+    - C#
+    - Java
+    correct: 2
   startButton: {fileID: 705537053}
   answerButton:
   - {fileID: 841539919}
@@ -4345,6 +4348,7 @@ MonoBehaviour:
   - {fileID: 1085368606}
   - {fileID: 470581344}
   bubbleTxt: {fileID: 136237484}
+  quizIcons: []
 --- !u!1 &1306070225
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,7 +4622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 550, y: -219.005}
+  m_AnchoredPosition: {x: 550, y: -165.005}
   m_SizeDelta: {x: 1000, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1384091688
@@ -4641,19 +4645,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<size=50><color=yellow>Mission 15 - RUnning in the Air</color></size>
+  m_text: '<size=50><color=yellow>Mission 16 - Quiz master is back</color></size>
 
 
-    Whenever
-    cody is jumping he just keeps running in the air. fix it so that cody has a jumping
-    animation frame working. It''s mostly set up, the animation exists and is set
-    up in the animator.
+    same
+    old rules.
 
 
     Mission
 
-    <color=yellow>Jump on the goal so that
-    you have the correct animation playing when you hit it. </color>'
+    <color=yellow>answer 5/10 questions correctly.
+    </color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
   m_sharedMaterial: {fileID: 1520220755029484581, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
@@ -7277,8 +7279,6 @@ RectTransform:
   m_Children:
   - {fileID: 803626504}
   - {fileID: 300741219}
-  - {fileID: 846053636}
-  - {fileID: 1229636454}
   - {fileID: 952631933}
   - {fileID: 2134787708}
   - {fileID: 705537054}
@@ -7462,7 +7462,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -100, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031787773
 MonoBehaviour:
@@ -7514,9 +7514,9 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 35
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -7795,6 +7795,43 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134787707}
   m_CullTransparentMesh: 1
+--- !u!1 &2147064316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2147064317}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2147064317
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147064316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 846053636}
+  - {fileID: 1229636454}
+  m_Father: {fileID: 803626504}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

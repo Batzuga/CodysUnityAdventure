@@ -20,6 +20,7 @@ public class QuizManager : MonoBehaviour
     int corrects;
     int q;
     int btns;
+    [SerializeField] GameObject[] quizIcons;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +32,10 @@ public class QuizManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void HideQuizIcons()
+    {
+
     }
     public void StartQuiz()
     {

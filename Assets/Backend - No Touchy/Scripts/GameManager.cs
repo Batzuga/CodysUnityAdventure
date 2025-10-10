@@ -50,43 +50,7 @@ public class GameManager : MonoBehaviour
         if (Vector2.Distance(player.transform.position, startP) > 0.2f)
         {
             bubble.SetActive(false);
-        }     
-        string animationPlayingName = player.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name;
-        if (!player.isGrounded())
-        {
-            if(animationPlayingName == "Cody_Idle" ||animationPlayingName == "Code_Run")
-            {
-                wrongairframe += Time.deltaTime;
-            }
-        }
-        if(player.isGrounded())
-        {
-            if(animationPlayingName == "Cody_Jumping")
-            {
-                jumpframeonground += Time.deltaTime;
-            }
-        }
-        if(jumpframeonground > 1f || wrongairframe > 1f)
-        {
-            Trophy.instance.Toggle(false);
-        }
-        else if(!player.GetComponent<Animator>().GetBool("Win"))
-        {
-            if(animationPlayingName == "Cody_Jumping" && !player.isGrounded())
-            {
-                Trophy.instance.Toggle(true);
-            }
-            else
-            {
-                Trophy.instance.Toggle(false);
-            }
-        }
-        else
-        {
-            Trophy.instance.Toggle(true);
-        }
-
-       
+        }           
     }
 
     public bool MissionComplete()

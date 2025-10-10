@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     [SerializeField] Transform[] groundChecks;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float groundCheckHeight;
-
     bool grounded;
 
     void Start()

@@ -26,17 +26,17 @@ public class Player : MonoBehaviour
     {
         grounded = CheckIfGrounded();
         Movement();
-        Jupm();
+        Jump();
     }
 
 
     void Jump()
     {
-        if(Input.GetKeyDown(KeyCode.Jump))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            if (grounded == false)
+            if (grounded)
             {
-                rb.AddForce(Vector2.left * jumpPower, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             }
         }     
     }
@@ -127,4 +127,5 @@ public class Player : MonoBehaviour
         }
         return hits;
     }
+    public bool isGrounded() { return grounded; }
 }

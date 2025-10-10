@@ -20,6 +20,10 @@ public class GameManager : MonoBehaviour
     bool jumpBeenPressed;
     bool playerboxed;
     [SerializeField] BoxCollider2D lap;
+
+    float jumpframeonground;
+    float wrongairframe;
+
     private void Awake()
     {
         if(instance == null)
@@ -47,22 +51,42 @@ public class GameManager : MonoBehaviour
         {
             bubble.SetActive(false);
         }     
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W))
+        string animationPlayingName = player.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name;
+        if (!player.isGrounded())
         {
-            jumpBeenPressed = true;
-        }
-        List<Collider2D> results = new List<Collider2D>();
-        if(!playerboxed && lap.Overlap(results) > 0)
-        {
-            foreach(Collider2D col in results)
+            if(animationPlayingName == "Cody_Idle" ||animationPlayingName == "Code_Run")
             {
-                if(col.gameObject.CompareTag("Player"))
-                {
-                    playerboxed = true;
-                }
+                wrongairframe += Time.deltaTime;
             }
         }
-        Trophy.instance.Toggle(playerboxed && jumpBeenPressed);
+        if(player.isGrounded())
+        {
+            if(animationPlayingName == "Cody_Jumping")
+            {
+                jumpframeonground += Time.deltaTime;
+            }
+        }
+        if(jumpframeonground > 1f || wrongairframe > 1f)
+        {
+            Trophy.instance.Toggle(false);
+        }
+        else if(!player.GetComponent<Animator>().GetBool("Win"))
+        {
+            if(animationPlayingName == "Cody_Jumping" && !player.isGrounded())
+            {
+                Trophy.instance.Toggle(true);
+            }
+            else
+            {
+                Trophy.instance.Toggle(false);
+            }
+        }
+        else
+        {
+            Trophy.instance.Toggle(true);
+        }
+
+       
     }
 
     public bool MissionComplete()

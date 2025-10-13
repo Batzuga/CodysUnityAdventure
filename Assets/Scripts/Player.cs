@@ -25,13 +25,19 @@ public class Player : MonoBehaviour
     void Update()
     {
         grounded = CheckIfGrounded();
+        anim.SetBool("Grounded", grounded);
         Movement();
         Jump();
+        Restart();
     }
 
     void Restart()
     {
-        
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            Scene s = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(s.name);
+        }
     }
     void Jump()
     {

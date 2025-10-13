@@ -3,6 +3,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 
 /// <summary>
 /// Don't make changes to the Game Manager. It keeps track that you're not cheating ;).
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     Vector2 startP;
     int reset;
     int scenenum;
+    Transform target;
     private void Awake()
     {
         if(instance == null)
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
         startP = player.transform.position;
         scenenum = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += LoadScene;
+        target = GameObject.Find("PushableBox").transform;
+        if (target) target.transform.position = new Vector2(3.5f, -1.480461f);
     }
 
     private void LoadScene(Scene scene, LoadSceneMode mode)
@@ -70,7 +74,11 @@ public class GameManager : MonoBehaviour
             if (bubble == null) bubble = player.transform.Find("SpeechBubble (Cody)").gameObject;
             bubble.SetActive(false);
         }
-        Trophy.instance.Toggle(reset > 2);
+        if(OverlapCheck.instance.Check())
+        {
+            Trophy.instance.Toggle(true);
+        }
+        else Trophy.instance.Toggle(false);
     }
 
     public bool MissionComplete()

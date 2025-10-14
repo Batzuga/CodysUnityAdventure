@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CheckoutNext
 {
-    public static string nextLevel;
+    public static string nextLevel = "Mission-1";
 
     [MenuItem("Cody/Next Level")]
     static void LoadNextLevel()
     {
         CheckoutNext.SwitchBranch(nextLevel);
-        //EditorUtility.DisplayDialog("Button Clicked", "You clicked the custom menu button!", "OK");
+        EditorUtility.DisplayDialog("Switching Branch", "Wait for a while until you see a reload scene popup. Kinda like this one.", "OK");
     }
     public static void Reset()
     {
@@ -71,7 +71,7 @@ public class CheckoutNext
         }
         else
         {
-            UnityEngine.Debug.LogError($"Error switching branch: {error}");
+            UnityEngine.Debug.LogWarning($"{error}");
         }
     }
 }

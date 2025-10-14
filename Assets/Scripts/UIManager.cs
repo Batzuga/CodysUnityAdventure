@@ -41,7 +41,10 @@ public class UIManager : MonoBehaviour
     {
         missionPopup.SetActive(!missionPopup.activeSelf);
     }
-
+    public int CheckScore()
+    {
+        return score;
+    }
     public void AddScore()
     {
         score++;

@@ -16,7 +16,9 @@ public class Streetlight : MonoBehaviour
 
     public void SetLightOn(bool lightOn)
     {
-        
+        ChangeTexture(lightOn);
+        lightSource.enabled = lightOn;
+        lightSource.gameObject.SetActive(lightOn);
     }
 
     void ChangeTexture(bool b)

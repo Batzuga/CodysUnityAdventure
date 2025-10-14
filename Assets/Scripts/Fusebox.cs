@@ -19,7 +19,7 @@ public class Fusebox : MonoBehaviour
     {
         fuseBoxOn = !fuseBoxOn;
         rend.sprite = fuseBoxOn ? boxOn : boxOff;
-        targetLamp.SetLightOn();
+        targetLamp.SetLightOn(fuseBoxOn);
     }
 
     public bool BoxOnCheck()

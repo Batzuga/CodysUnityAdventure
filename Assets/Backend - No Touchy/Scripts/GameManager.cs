@@ -21,10 +21,10 @@ public class GameManager : MonoBehaviour
     Vector2 startP;
     int reset;
     int scenenum;
-    Transform target;
-    Streetlight lamp;
-    Fusebox box;
-    [SerializeField] string nextLevel;
+    int start;
+    int cur;
+    int prev;
+    bool cheater;
 
     private void Awake()
     {
@@ -44,19 +44,31 @@ public class GameManager : MonoBehaviour
         startP = player.transform.position;
         scenenum = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += LoadScene;
-        lamp = FindFirstObjectByType<Streetlight>();
-        box = FindFirstObjectByType<Fusebox>();
+        Diamond[] diamons = GameObject.FindObjectsByType<Diamond>(FindObjectsSortMode.None);
+        start = diamons.Length;
+        prev = 6;
+        InvokeRepeating("Check", 0f, 0.3f);
     }
-
-    public void Next()
+    void Check()
     {
-        CheckoutNext.SwitchBranch(nextLevel);
+        Diamond[] diamons = GameObject.FindObjectsByType<Diamond>(FindObjectsSortMode.None);
+        cur = diamons.Length;
+        if (cur == prev) return;
+        else if (cur == prev - 1)
+        {
+            prev = cur;
+            return;
+        }
+        else
+        {
+            Debug.LogError("Cheater! Shaaaaame");
+            cheater = true;
+        }
     }
     private void LoadScene(Scene scene, LoadSceneMode mode)
     {
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
-        Debug.Log(scene.buildIndex);
         if(scene.buildIndex == scenenum) reset++;
         winScreen = GameObject.Find("MissionUI").transform.Find("WinScreen").gameObject;
         try
@@ -84,14 +96,11 @@ public class GameManager : MonoBehaviour
         }
         try
         {
-            if(box.BoxOnCheck() && lamp.LampOnCheck())
+            if(start == 6 && cur == 0 && cheater == false && UIManager.instance.CheckScore() == 6)
             {
                 Trophy.instance.Toggle(true);
             }
-            else
-            {
-                Trophy.instance.Toggle(false);
-            }
+            else Trophy.instance.Toggle(false);
         }
         catch
         {

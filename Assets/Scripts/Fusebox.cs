@@ -22,10 +22,9 @@ public class Fusebox : MonoBehaviour
         targetLamp.SetLightOn();
     }
 
+    //gamemanager helper function no touchy.
     public bool BoxOnCheck()
     {
-        Debug.Log(fuseBoxOn + " boxOn");
-        Debug.Log((rend.sprite == boxOn).ToString() + " sprite");
         return fuseBoxOn && rend.sprite == boxOn;
     }
 }

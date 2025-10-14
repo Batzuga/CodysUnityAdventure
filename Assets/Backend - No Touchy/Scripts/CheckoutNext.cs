@@ -2,9 +2,8 @@ using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 
-public class CheckoutNext : EditorWindow
+public class CheckoutNext
 {
-
 
     public static void SwitchBranch(string branchName)
     {
@@ -16,7 +15,8 @@ public class CheckoutNext : EditorWindow
             StartInfo = new ProcessStartInfo
             {
                 FileName = "git",
-                Arguments = $"checkout {branchName}",
+                Arguments = $"reset --hard " +
+                $"checkout {branchName}",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,

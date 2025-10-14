@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float groundCheckHeight;
     bool grounded;
+    GameObject interactTarget;
 
     void Start()
     {
@@ -29,8 +30,15 @@ public class Player : MonoBehaviour
         Movement();
         Jump();
         Restart();
+        Interact();
     }
-
+    void Interact()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            
+        }
+    }
     void Restart()
     {
         if(Input.GetKeyDown(KeyCode.R))
@@ -96,14 +104,29 @@ public class Player : MonoBehaviour
             if (!GameManager.instance.MissionComplete()) return;
             WinGame();
         }
-        if(collision.gameObject.GetComponent<Diamond>())
+        else if(collision.gameObject.GetComponent<Diamond>())
         {
             collision.gameObject.GetComponent<Diamond>().Collect();
         }
-        if(collision.gameObject.CompareTag("DeadZone"))
+        else if(collision.gameObject.CompareTag("DeadZone"))
         {
             rb.linearVelocity = Vector2.zero;
             transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+        }
+        else
+        {
+            interactTarget = collision.gameObject;
+            Debug.Log("Setting interact target to: " + interactTarget.name, collision.gameObject);
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject == interactTarget)
+        {
+            interactTarget = null;
+            Debug.Log("Removing interact target");
         }
     }
 

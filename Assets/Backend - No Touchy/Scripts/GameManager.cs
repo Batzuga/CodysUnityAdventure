@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
     int reset;
     int scenenum;
     Transform target;
+    Streetlight lamp;
+    Fusebox box;
+    [SerializeField] string nextLevel;
+
     private void Awake()
     {
         if(instance == null)
@@ -40,10 +44,14 @@ public class GameManager : MonoBehaviour
         startP = player.transform.position;
         scenenum = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += LoadScene;
-        target = GameObject.Find("PushableBox").transform;
-        if (target) target.transform.position = new Vector2(3.5f, -1.480461f);
+        lamp = FindFirstObjectByType<Streetlight>();
+        box = FindFirstObjectByType<Fusebox>();
     }
 
+    public void Next()
+    {
+        CheckoutNext.SwitchBranch(nextLevel);
+    }
     private void LoadScene(Scene scene, LoadSceneMode mode)
     {
         player = GameObject.FindFirstObjectByType<Player>();
@@ -74,11 +82,21 @@ public class GameManager : MonoBehaviour
             if (bubble == null) bubble = player.transform.Find("SpeechBubble (Cody)").gameObject;
             bubble.SetActive(false);
         }
-        if(OverlapCheck.instance.Check())
+        try
         {
-            Trophy.instance.Toggle(true);
+            if(box.BoxOnCheck() && lamp.LampOnCheck())
+            {
+                Trophy.instance.Toggle(true);
+            }
+            else
+            {
+                Trophy.instance.Toggle(false);
+            }
         }
-        else Trophy.instance.Toggle(false);
+        catch
+        {
+            Trophy.instance.Toggle(false);
+        }
     }
 
     public bool MissionComplete()

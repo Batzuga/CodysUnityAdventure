@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshPro bubbleTxt;
 
     [SerializeField] string nextLevel;
+
     Vector2 startP;
     int reset;
     int scenenum;
@@ -73,10 +74,8 @@ public class GameManager : MonoBehaviour
     [MenuItem("Cody/Next Level")]
     static void LoadNextLevel()
     {
-        // Code to execute when the button is clicked
-        Debug.Log("My Custom Button was clicked!");
-        CheckoutNext.SwitchBranch("Mission-5");
-        EditorUtility.DisplayDialog("Button Clicked", "You clicked the custom menu button!", "OK");
+        CheckoutNext.SwitchBranch(instance.nextLevel);
+        //EditorUtility.DisplayDialog("Button Clicked", "You clicked the custom menu button!", "OK");
     }
     private void LoadScene(Scene scene, LoadSceneMode mode)
     {

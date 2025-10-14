@@ -71,12 +71,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [MenuItem("Cody/Next Level")]
-    static void LoadNextLevel()
-    {
-        CheckoutNext.SwitchBranch(instance.nextLevel);
-        //EditorUtility.DisplayDialog("Button Clicked", "You clicked the custom menu button!", "OK");
-    }
+    
     private void LoadScene(Scene scene, LoadSceneMode mode)
     {
         player = GameObject.FindFirstObjectByType<Player>();

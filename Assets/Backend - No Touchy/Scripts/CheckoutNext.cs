@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class CheckoutNext
 {
+    public static string nextLevel;
 
+    [MenuItem("Cody/Next Level")]
+    static void LoadNextLevel()
+    {
+        CheckoutNext.SwitchBranch(nextLevel);
+        //EditorUtility.DisplayDialog("Button Clicked", "You clicked the custom menu button!", "OK");
+    }
     public static void Reset()
     {
         Process process = new Process

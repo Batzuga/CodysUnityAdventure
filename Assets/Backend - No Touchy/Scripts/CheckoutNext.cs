@@ -5,8 +5,38 @@ using UnityEngine;
 public class CheckoutNext
 {
 
+    public static void Reset()
+    {
+        Process process = new Process
+        {
+            StartInfo = new ProcessStartInfo
+            {
+                FileName = "git",
+                Arguments = $"reset --hard",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            }
+        };
+
+        process.Start();
+        string output = process.StandardOutput.ReadToEnd();
+        string error = process.StandardError.ReadToEnd();
+        process.WaitForExit();
+
+        if (string.IsNullOrEmpty(error))
+        {
+            UnityEngine.Debug.Log($"Reset success");
+        }
+        else
+        {
+            UnityEngine.Debug.LogError($"Error reseting");
+        }
+    }
     public static void SwitchBranch(string branchName)
     {
+        Reset();
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #endif
@@ -15,8 +45,7 @@ public class CheckoutNext
             StartInfo = new ProcessStartInfo
             {
                 FileName = "git",
-                Arguments = $"reset --hard " +
-                $"checkout {branchName}",
+                Arguments = $"checkout {branchName}",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,

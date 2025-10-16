@@ -1,17 +1,51 @@
 using System.Diagnostics;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class CheckoutNext
 {
     public static string nextLevel = "Mission-1";
+    public static string previousLevel = "Mission-1";
 
-    [MenuItem("Cody/Next Level")]
+    [MenuItem("Cody's Unity Adventure/Next Level")]
     static void LoadNextLevel()
     {
         CheckoutNext.SwitchBranch(nextLevel);
         EditorUtility.DisplayDialog("Switching Branch", "Wait for a while until you see a reload scene popup. Kinda like this one.", "OK");
+        AssetDatabase.Refresh();
     }
+
+    [MenuItem("Cody's Unity Adventure/Reset Level")]
+    static void ReloadLevel()
+    {
+        SaveCurrentScene();
+        Reset();
+        AssetDatabase.Refresh();
+    }
+
+    public static void SaveCurrentScene()
+    {
+        // Save the currently open scene
+        bool success = EditorApplication.SaveScene();
+
+        if (success)
+        {
+            UnityEngine.Debug.Log("Saved scene to reset it completely.");
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Failed to save the scene for a reset.");
+        }
+    }
+
+    [MenuItem("Cody's Unity Adventure/Previous Level")]
+    static void LoadPreviousLevel()
+    {
+        CheckoutNext.SwitchBranch(previousLevel);
+        AssetDatabase.Refresh();
+    }
+
     public static void Reset()
     {
         Process process = new Process

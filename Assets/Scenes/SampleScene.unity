@@ -4401,16 +4401,8 @@ MonoBehaviour:
   tmp: {fileID: 1384091688}
   bubble: {fileID: 2116310359}
   bubbleTxt: {fileID: 970494336}
-  locks:
-  - {fileID: 621451965}
-  - {fileID: 1654989466}
-  - {fileID: 64857041}
-  - {fileID: 1798223992}
-  keys:
-  - {fileID: 718124208}
-  - {fileID: 660133949}
-  - {fileID: 1135965650}
-  - {fileID: 1056963515}
+  locks: []
+  keys: []
 --- !u!4 &1238185500
 Transform:
   m_ObjectHideFlags: 0
@@ -4634,7 +4626,7 @@ MonoBehaviour:
     Mission
 
     <color=yellow>Make
-    the door sensor open the door</color>'
+    the keys fall into locks to activate the goal</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}
   m_sharedMaterial: {fileID: 1520220755029484581, guid: e87f9f59a38f85b41b509b2805d05a99, type: 2}

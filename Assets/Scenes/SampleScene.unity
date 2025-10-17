@@ -2515,7 +2515,7 @@ MonoBehaviour:
   tmp: {fileID: 1384091688}
   bubble: {fileID: 2116310359}
   bubbleTxt: {fileID: 970494336}
-  woods: {fileID: 392452039}
+  woods: {fileID: 0}
 --- !u!4 &1238185500
 Transform:
   m_ObjectHideFlags: 0
@@ -5423,6 +5423,18 @@ PrefabInstance:
     - target: {fileID: 4970025402733157020, guid: 25b6e7f70d36eb04a855051d91763187, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -183.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233271118561610805, guid: 25b6e7f70d36eb04a855051d91763187, type: 3}
+      propertyPath: m_Color.b
+      value: 0.18431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233271118561610805, guid: 25b6e7f70d36eb04a855051d91763187, type: 3}
+      propertyPath: m_Color.g
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5233271118561610805, guid: 25b6e7f70d36eb04a855051d91763187, type: 3}
+      propertyPath: m_Color.r
+      value: 0.40392157
       objectReference: {fileID: 0}
     - target: {fileID: 5648402502567279437, guid: 25b6e7f70d36eb04a855051d91763187, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

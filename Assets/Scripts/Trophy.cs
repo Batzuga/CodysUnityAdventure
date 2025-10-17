@@ -5,7 +5,7 @@ public class Trophy : MonoBehaviour
     public static Trophy instance;
     Animator anim;
     [HideInInspector] public bool opened;
-    Player player;
+
     private void Awake()
     {
         if (instance == null)
@@ -26,15 +26,6 @@ public class Trophy : MonoBehaviour
 
     private void Update()
     {
-        if(player == null) player = GameObject.FindFirstObjectByType<Player>();
-        if(player != null)
-        {
-            if(player.transform.position.x > 0)
-            {
-                Debug.Log("Nyahaha");
-                transform.position = new Vector2(player.transform.position.x + 6f, -1);
-            }
-        }
 
     }
 

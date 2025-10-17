@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CheckoutNext
 {
-    public static string nextLevel = "Mission-21";
-    public static string previousLevel = "Mission-19";
+    public static string nextLevel = "Mission-22";
+    public static string previousLevel = "Mission-20";
 
     [MenuItem("Cody's Unity Adventure/Next Level", false, 100)]
     static void LoadNextLevel()

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     int cur;
     int prev;
     bool cheater;
+    [SerializeField] SpriteRenderer woods;
 
     private void Awake()
     {
@@ -44,27 +45,8 @@ public class GameManager : MonoBehaviour
         startP = player.transform.position;
         scenenum = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += LoadScene;
-        Diamond[] diamons = GameObject.FindObjectsByType<Diamond>(FindObjectsSortMode.None);
-        start = diamons.Length;
-        prev = 6;
-        InvokeRepeating("Check", 0f, 0.3f);
     }
-    void Check()
-    {
-        Diamond[] diamons = GameObject.FindObjectsByType<Diamond>(FindObjectsSortMode.None);
-        cur = diamons.Length;
-        if (cur == prev) return;
-        else if (cur == prev - 1)
-        {
-            prev = cur;
-            return;
-        }
-        else
-        {
-            Debug.LogError("Cheater! Shaaaaame");
-            cheater = true;
-        }
-    }
+
     private void LoadScene(Scene scene, LoadSceneMode mode)
     {
         player = GameObject.FindFirstObjectByType<Player>();
@@ -96,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
         try
         {
-            if(start == 6 && cur == 0 && cheater == false && UIManager.instance.CheckScore() == 6)
+            if(woods.drawMode == SpriteDrawMode.Tiled)
             {
                 Trophy.instance.Toggle(true);
             }

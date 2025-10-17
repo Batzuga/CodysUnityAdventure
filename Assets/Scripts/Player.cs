@@ -56,8 +56,6 @@ public class Player : MonoBehaviour
         {
             if (grounded)
             {
-                Debug.Log("Myarrr!");
-                Instantiate(Resources.Load<GameObject>("CatTrap") as GameObject, transform.position, Quaternion.identity);
                 rb.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             }
         }     
@@ -96,11 +94,6 @@ public class Player : MonoBehaviour
         if(rb.linearVelocityX > 0.1f)
         {
             rend.flipX = false;
-        }
-        if(transform.position.y > 1.4f)
-        {
-            Debug.Log("Myeow!!!");
-            rb.gravityScale = -1f;
         }
     }
 

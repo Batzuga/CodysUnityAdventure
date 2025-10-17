@@ -25,7 +25,10 @@ public class GameManager : MonoBehaviour
     int cur;
     int prev;
     bool cheater;
-    [SerializeField] SpriteRenderer woods;
+    [SerializeField] SpriteRenderer rabbit;
+    string curRabbit;
+    int loops;
+    bool broken;
 
     private void Awake()
     {
@@ -45,6 +48,7 @@ public class GameManager : MonoBehaviour
         startP = player.transform.position;
         scenenum = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += LoadScene;
+        broken = false;
     }
 
     private void LoadScene(Scene scene, LoadSceneMode mode)
@@ -78,7 +82,64 @@ public class GameManager : MonoBehaviour
         }
         try
         {
-            if(woods.drawMode == SpriteDrawMode.Tiled)
+
+            if(rabbit.sprite.name == "hop_0" && curRabbit != rabbit.sprite.name)
+            {
+                if(loops == 0)
+                {
+                    curRabbit = rabbit.sprite.name;
+                }
+                if(loops > 0 && curRabbit == "hop_3")
+                {
+                    curRabbit = rabbit.sprite.name;
+                    loops++;
+                }
+                else if (loops > 0)
+                {
+                    broken = true;
+                    Debug.LogWarning("Not quite. There is an issue with the animation!");
+                }
+            }       
+            else if(rabbit.sprite.name == "hop_1" && curRabbit != rabbit.sprite.name)
+            {
+                if(curRabbit == "hop_0")
+                {
+                    curRabbit = rabbit.sprite.name;
+                    loops++;
+                }
+                else
+                {
+                    broken = true;
+                    Debug.LogWarning("Not quite. There is an issue with the animation!");
+                }
+            }
+            else if (rabbit.sprite.name == "hop_2" && curRabbit != rabbit.sprite.name)
+            {
+                if (curRabbit == "hop_1")
+                {
+                    curRabbit = rabbit.sprite.name;
+                    loops++;
+                }
+                else
+                {
+                    broken = true;
+                    Debug.LogWarning("Not quite. There is an issue with the animation!");
+                }
+            }
+            else if (rabbit.sprite.name == "hop_3" && curRabbit != rabbit.sprite.name)
+            {
+                if (curRabbit == "hop_2")
+                {
+                    curRabbit = rabbit.sprite.name;
+                    loops++;
+                }
+                else
+                {
+                    broken = true;
+                    Debug.LogWarning("Not quite. There is an issue with the animation!");
+                }
+            }
+            if (broken == false && loops >= 12)
             {
                 Trophy.instance.Toggle(true);
             }

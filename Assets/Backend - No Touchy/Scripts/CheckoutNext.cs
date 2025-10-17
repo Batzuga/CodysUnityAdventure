@@ -12,7 +12,7 @@ public class CheckoutNext
     static void LoadNextLevel()
     {
         CheckoutNext.SwitchBranch(nextLevel);
-       // EditorUtility.DisplayDialog("Switching Branch", "Wait for a while until you see a reload scene popup. Kinda like this one.", "OK");
+       //  EditorUtility.DisplayDialog("Switching Branch", "Wait for a while until you see a reload scene popup. Kinda like this one.", "OK");
         AssetDatabase.Refresh();
     }
 

@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
+        keys = FindObjectsByType<Key>(FindObjectsSortMode.None);
+        locks = FindObjectsByType<Lock>(FindObjectsSortMode.None);
         startP = player.transform.position;
         KeyTest();
         

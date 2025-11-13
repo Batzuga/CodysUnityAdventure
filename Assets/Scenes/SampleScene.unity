@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1238185498}
   winScreen: {fileID: 300741216}
-  tmp: {fileID: 0}
+  tmp: {fileID: 1384091688}
   bubble: {fileID: 2116310359}
   bubbleTxt: {fileID: 970494336}
 --- !u!4 &1238185500

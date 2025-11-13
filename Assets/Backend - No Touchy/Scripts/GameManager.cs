@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(new Vector2(0, 1), Vector2.down, 10f, mask);
-        Debug.Log(hit.transform.gameObject.name);
+        RaycastHit2D hit = Physics2D.Raycast(new Vector2(0, 1), Vector2.down, 3f, mask);
         if(hit.transform.gameObject == tilemap)
         {
             Trophy.instance.Toggle(true);

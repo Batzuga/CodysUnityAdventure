@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
+        if (missionPopup == null) missionPopup = GameObject.Find("MissionPopup");
         previous = missionPopup.activeSelf;
     }
     public void HideBubble()

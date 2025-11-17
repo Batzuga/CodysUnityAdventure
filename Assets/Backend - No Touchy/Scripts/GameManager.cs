@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
             }
         }
         DontDestroyOnLoad(gameObject);
+        if (tilemap == null) tilemap = GameObject.Find("PlayerLayer");
+        mask = LayerMask.GetMask("Ground");
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
     }
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(new Vector2(0, 1), Vector2.down, 3f, mask);
-        if(hit.transform.gameObject == tilemap)
+        if(hit && hit.transform.gameObject == tilemap)
         {
             Trophy.instance.Toggle(true);
         }

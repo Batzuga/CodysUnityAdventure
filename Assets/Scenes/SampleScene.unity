@@ -3369,8 +3369,8 @@ MonoBehaviour:
   bubbleTxt: {fileID: 970494336}
   mask:
     serializedVersion: 2
-    m_Bits: 183
-  tilemap: {fileID: 1607519182}
+    m_Bits: 160
+  tilemap: {fileID: 0}
 --- !u!4 &1238185500
 Transform:
   m_ObjectHideFlags: 0

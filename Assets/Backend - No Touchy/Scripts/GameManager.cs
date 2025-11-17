@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
         scenenum = SceneManager.GetActiveScene().buildIndex;
         SceneManager.sceneLoaded += LoadScene;
         broken = false;
+        if (rabbit == null) rabbit = GameObject.Find("Rabbit").GetComponent<SpriteRenderer>();
     }
 
     private void LoadScene(Scene scene, LoadSceneMode mode)

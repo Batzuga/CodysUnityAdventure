@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         player = GameObject.FindFirstObjectByType<Player>();
         startP = player.transform.position;
         scenenum = SceneManager.GetActiveScene().buildIndex;
+        if (woods == null) woods = GameObject.Find("BackgroundWoods").GetComponent<SpriteRenderer>();
         SceneManager.sceneLoaded += LoadScene;
     }
 

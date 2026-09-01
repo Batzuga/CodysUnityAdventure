@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         player = GameObject.FindFirstObjectByType<Player>();
+        tmp = GameObject.Find("MissionText").GetComponent<TextMeshProUGUI>();
         gameName = Application.productName;
         parsed = gameName.ToLower();
         parsed = parsed.Replace("'", "");

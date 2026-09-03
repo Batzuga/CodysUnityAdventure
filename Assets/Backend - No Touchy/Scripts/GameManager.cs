@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
     {
         ppu = (sprite.pixelsPerUnit == 16);
         filt = sprite.texture.filterMode == FilterMode.Point;
+        if(tmp.transform.localScale != Vector3.one) tmp.transform.localScale = Vector3.one;
         size = tmp.transform.localScale.x == 1 && tmp.transform.localScale.y == 1;
         if(filt && ppu && size && !textureFixd)
         {
